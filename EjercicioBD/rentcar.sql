@@ -35,7 +35,7 @@ CREATE TABLE Alquiler (
     fk_cliente INT NOT NULL,
     fk_coche INT NOT NULL,
     fecha_inicio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    fecha_final DATETIME NOT NULL CHECK (fecha_final >= fecha_inicio),
+    fecha_final DATETIME NOT NULL,
     descuento DECIMAL(10,2) DEFAULT 0.00 CHECK (descuento >= 0),
     precio_final DECIMAL(10,2) NOT NULL CHECK (precio_final >= 0),
     FOREIGN KEY (fk_cliente) REFERENCES Clientes(id_cliente),
